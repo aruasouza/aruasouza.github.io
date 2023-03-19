@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Casamento Bruna e Aruã</title>
+    <link rel="stylesheet" type="text/css" href="theme.css"> 
+    <link rel="stylesheet" type="text/css" href="./icons/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header class="header">
+      <img src="img/hero.jpg" class = 'simbolo'width="633" height="341">
+    </header>
+    <a data-scroll class="fixed-button" href="#rsvp" id="rsvpButton">Presença</a> 
+    <section class="section">
+      <h1 class="sub-heading">
+        Bem-Vindos!
+      </h1>
+      <p>Olá, querido convidado! 
+
+        Estamos muito felizes que você será parte do dia mais importante de nossas vidas.
+        
+        Nosso casamento será intimista, reuniremos apenas familiares e amigos bem próximos, numa singela confraternização, mas para celebrar um grandioso sacramento. 
+        
+        Nesta página você encontrará informações gerais e também irá confirmar sua presença. Se restar alguma dúvida, é só nos procurar!
+      </p>
+    </section>
+    <section class="section">
+      <h2 class="sub-heading">Detalhes</h2>
+      <div class="details">
+        <i class="fas fa-calendar-check"></i>
+        <h3 class="details-heading">Quando</h3>
+        <p>16 de dezembro de 2023</p>
+        <a title="Add to Calendar" rel="noopener" href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2JzMWpjazViMzZ0dm85bjVqZTczcWJ2cmogYXJ1YS52aXNvQG0&tmsrc=arua.viso%40gmail.com" target="_blank" rel="nofollow">Adicionar ao Calendário</a>
+      </div>
+      <div class="details">
+        <i class="fas fa-church"></i>
+        <h3 class="details-heading">Local da Cerimônia</h3>
+        <p><a rel="noopener" href="https://goo.gl/maps/rZtErqeEHHAd7JKy8">Igreja Puríssimo Coração de Maria</a> <br><br>R. Arlíndo Pena, 85 - Santa Monica, Florianópolis - SC</p>
+      </div>
+      <div class="details">
+        <i class="fas fa-coffee"></i>
+        <h3 class="details-heading">Local do Almoço</h3>
+        <p><a rel="noopener" href="https://goo.gl/maps/MDWu8UVEJZXLFEKn9">Café Paris</a> <br><br>R. Ten. Francisco Lehmkhul, 85 - Centro, Palhoça - SC</p>
+      </div>
+      <div class="details">
+        <i class="fas fa-user-tie"></i>
+        <h3 class="details-heading">Código de vestimenta</h3>
+        <p>Como forma de respeito e reverência ao local sagrado, pedimos gentilmente que todos se vistam com modéstia.</p>
+      </div>
+      <div class="details">
+        <i class="fas fa-clipboard-check"></i>
+        <h3 class="details-heading" id="rsvp">Confirmação de Presença</h3>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSey_L7tB9CxNdDdizNOquuTS0_rqIF6s2W3IxqPp9dKITYCLQ/viewform?embedded=true" width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <!-- Include Embedded link of Google Form here in place of # -->
+        <!-- <iframe title="RSVP" src="" style="width:100%;" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+      </div>
+    </section>
+    <script src="./js/smooth-scroll.polyfills.min.js"></script>
+    <script defer>
+      var scroll = new SmoothScroll('a[href*="#"]');
+      var rsvpButton = document.getElementById('rsvpButton')
+      rsvpButton.addEventListener('click',hideButton,false);
+
+      function hideButton() {
+        rsvpButton.style.display = 'none';
+      }   
+    </script>
+  </body>
+</html>
