@@ -1,77 +1,427 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
-    <title>Casamento Bruna e Aruã</title>
-    <link rel="stylesheet" type="text/css" href="theme.css"> 
-    <link rel="stylesheet" type="text/css" href="./icons/css/all.min.css"> 
-    <link href="https://fonts.googleapis.com/css?family=Caveat|Quicksand&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <header class="header">
-      <img src="img/hero.jpg" class = 'simbolo'width="314" height="342">
-    </header>
-    <a data-scroll class="fixed-button" href="#rsvp" id="rsvpButton">Presença</a> 
-    <section class="section">
-      <h1 class="sub-heading">
-        Bem-Vindos!
-      </h1>
-      <p>Olá, querido convidado! 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aruã Viggiano Souza | Data Scientist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050510;
+            --card-bg: rgba(20, 20, 35, 0.6);
+            --primary: #00f3ff;
+            --secondary: #bd00ff;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0b0;
+            --glass-border: rgba(0, 243, 255, 0.1);
+            --glow-primary: 0 0 10px rgba(0, 243, 255, 0.3);
+            --glow-secondary: 0 0 10px rgba(189, 0, 255, 0.3);
+        }
 
-        Estamos muito felizes que você será parte do dia mais importante de nossas vidas.
-        
-        Nosso casamento será intimista, reuniremos apenas familiares e amigos bem próximos, numa singela confraternização, mas para celebrar um grandioso sacramento. 
-        
-        Nesta página você encontrará informações gerais e também irá confirmar sua presença. Se restar alguma dúvida, é só nos procurar!
-      </p>
-    </section>
-    <section class="section">
-      <h2 class="sub-heading">Detalhes</h2>
-      <div class="details">
-        <i class="fas fa-calendar-check"></i>
-        <h3 class="details-heading">Quando</h3>
-        <p>16 de dezembro de 2023</p>
-        <a title="Add to Calendar" rel="noopener" href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2JzMWpjazViMzZ0dm85bjVqZTczcWJ2cmogYXJ1YS52aXNvQG0&tmsrc=arua.viso%40gmail.com" target="_blank" rel="nofollow">Adicionar ao Calendário</a>
-      </div>
-      <div class="details">
-        <i class="fas fa-church"></i>
-        <h3 class="details-heading">Local da Cerimônia</h3>
-        <p><a rel="noopener" href="https://goo.gl/maps/rZtErqeEHHAd7JKy8">Igreja Puríssimo Coração de Maria</a> <br><br>R. Arlíndo Pena, 85 - Santa Monica, Florianópolis - SC</p>
-      </div>
-      <div class="details">
-        <i class="fas fa-coffee"></i>
-        <h3 class="details-heading">Local do Almoço</h3>
-        <p><a rel="noopener" href="https://goo.gl/maps/MDWu8UVEJZXLFEKn9">Café Paris</a> <br><br>R. Ten. Francisco Lehmkhul, 85 - Centro, Palhoça - SC</p>
-      </div>
-      <div class="details">
-        <i class="fas fa-user-tie"></i>
-        <h3 class="details-heading">Código de vestimenta</h3>
-        <p>Como forma de respeito e reverência ao local sagrado, pedimos gentilmente que todos se vistam com modéstia.</p>
-      </div>
-      <div class="details">
-        <i class="fas fa-gift"></i>
-        <h3 class="details-heading">Presentes</h3>
-        <p>Para melhor comodidade e flexibilidade, pedimos que os presentes sejam dados em dinheiro.</p>
-        <p>Pix: 48991508677 ou 51999253807</p>
-      </div>
-      <div class="details">
-        <i class="fas fa-clipboard-check"></i>
-        <h3 class="details-heading" id="rsvp">Confirmação de Presença</h3>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSey_L7tB9CxNdDdizNOquuTS0_rqIF6s2W3IxqPp9dKITYCLQ/viewform?embedded=true" width="640" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        <!-- Include Embedded link of Google Form here in place of # -->
-        <!-- <iframe title="RSVP" src="" style="width:100%;" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
-      </div>
-    </section>
-    <script src="./js/smooth-scroll.polyfills.min.js"></script>
-    <script defer>
-      var scroll = new SmoothScroll('a[href*="#"]');
-      var rsvpButton = document.getElementById('rsvpButton')
-      rsvpButton.addEventListener('click',hideButton,false);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      function hideButton() {
-        rsvpButton.style.display = 'none';
-      }   
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-main);
+            background: var(--bg-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        #network-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .glass-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .panel-left {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--primary);
+            box-shadow: var(--glow-primary);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .panel-left h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(0, 243, 255, 0.1);
+            border-radius: 4px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .contact a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .contact a:hover {
+            color: var(--primary);
+            text-shadow: var(--glow-primary);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: ">";
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .card-content p {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-content strong {
+            color: #fff;
+        }
+
+        .card-content em {
+            color: var(--text-muted);
+            font-style: normal;
+            font-size: 0.9rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            background: rgba(189, 0, 255, 0.1);
+            color: var(--secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            border: 1px solid rgba(189, 0, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background: rgba(189, 0, 255, 0.2);
+            box-shadow: var(--glow-secondary);
+            transform: translateY(-2px);
+        }
+
+        .tag.tech {
+            background: rgba(0, 243, 255, 0.1);
+            color: var(--primary);
+            border-color: rgba(0, 243, 255, 0.2);
+        }
+
+        .tag.tech:hover {
+            background: rgba(0, 243, 255, 0.2);
+            box-shadow: var(--glow-primary);
+        }
+
+        .project {
+            margin-bottom: 1.2rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--secondary);
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-client {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+
+        .project p {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .panel-left {
+                position: relative;
+                top: 0;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="network-bg"></canvas>
+
+    <div class="container">
+        <div class="layout">
+            <!-- Left Panel -->
+            <div class="panel-left">
+                <div class="glass-panel">
+                    <div class="avatar">
+                        <img src="perfil.jpg" alt="Aruã Viggiano Souza">
+                    </div>
+                    <h1>Aruã Viggiano Souza</h1>
+                    <div class="subtitle">Cientista de Dados & IA</div>
+                    <div class="contact">
+                        <a href="mailto:arua.viso@gmail.com">arua.viso@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/aru%C3%A3-viggiano-souza/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/aruasouza" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <main class="panel-right">
+                <!-- Education -->
+                <div class="glass-panel">
+                    <h2 class="section-title">Formação</h2>
+                    <div class="card-content">
+                        <p><strong>Engenharia de Controle e Automação</strong></p>
+                        <p><em>Ênfase em Inteligência Artificial</em></p>
+                        <p>Universidade Federal de Santa Catarina</p>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="glass-panel">
+                    <h2 class="section-title">Experiência</h2>
+                    <div class="card-content">
+                        <p><strong>Cientista de Dados & IA - Palmsoft Tecnologia</strong></p>
+                        <p><em>Desde 2022</em></p>
+                    </div>
+                </div>
+
+                <!-- Technologies -->
+                <div class="glass-panel">
+                    <h2 class="section-title">Tecnologias</h2>
+                    <div class="tags">
+                        <span class="tag tech">Python</span>
+                        <span class="tag tech">PyTorch</span>
+                        <span class="tag tech">Docker</span>
+                        <span class="tag tech">Linux</span>
+                        <span class="tag tech">AWS</span>
+                        <span class="tag tech">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Expertise -->
+                <div class="glass-panel">
+                    <h2 class="section-title">Expertise</h2>
+                    <div class="tags">
+                        <span class="tag">Redes Neurais</span>
+                        <span class="tag">Séries Temporais</span>
+                        <span class="tag">Análise de Dados</span>
+                        <span class="tag">Bancos de Dados</span>
+                        <span class="tag">Mineração de Dados</span>
+                        <span class="tag">APIs REST</span>
+                        <span class="tag">Web Scraping</span>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="glass-panel">
+                    <h2 class="section-title">Missões Realizadas</h2>
+                    
+                    <div class="project">
+                        <span class="project-client">CTG Brasil</span>
+                        <p>Modelos de risco financeiro com base em indicadores macroeconômicos</p>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-client">amcred</span>
+                        <p>Previsão de risco de inadimplência para empréstimos de micro crédito</p>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-client">grupo Nexxees</span>
+                        <p>Processamento de grandes volumes de dados para geração de indicadores financeiros</p>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-client">bistek</span>
+                        <p>Otimização de mix de produtos para rede de supermercados</p>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="glass-panel">
+                    <h2 class="section-title">Idiomas</h2>
+                    <div class="card-content">
+                        <p><strong>Inglês Avançado</strong></p>
+                        <p><strong>Português Nativo</strong></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('network-bg');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+
+        const particleCount = 60;
+        const connectionDistance = 150;
+        const moveSpeed = 0.5;
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * moveSpeed;
+                this.vy = (Math.random() - 0.5) * moveSpeed;
+                this.size = Math.random() * 2 + 1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 243, 255, 0.5)';
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            resize();
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            ctx.strokeStyle = 'rgba(0, 243, 255, 0.15)';
+            ctx.lineWidth = 1;
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < connectionDistance) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        init();
+        animate();
     </script>
-  </body>
+</body>
 </html>
